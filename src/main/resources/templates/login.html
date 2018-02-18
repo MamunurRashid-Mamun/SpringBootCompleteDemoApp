@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorator="layout/headerfooter">
+<head>
+    <title>Login</title>
+    <link href="/webjars/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+
+<div class="container" layout:fragment="content">
+    <span th:utext="${successMessage}" class="text-success"></span>
+
+    <form class="form-horizontal" th:action="@{/login}" method="post">
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="userName">User Name</label>
+            <div class="col-md-5">
+                <input id="userName" th:id="username" th:type="text" th:name="username" placeholder="User Name"
+                       style="margin-top: 0px;"/>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="password">Password</label>
+            <div class="col-md-6">
+                <input id="password" th:id="password" th:type="password" th:name="password" placeholder="Password"
+                       style="margin-top: 0px;"/>
+                <!--Error Message-->
+                <p th:if="${param.error}" class="text-danger">Invalid username and password.</p>
+                <p th:if="${param.logout}" class="text-danger">You have been logged out.</p>
+            </div>
+        </div>
+        <!-- Remember me -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="remember"></label>
+            <div class="col-md-4">
+                <input id="remember" type="checkbox" name="remember-me" class="btn btn-primary" value="true"/> Rememember Me
+            </div>
+
+        </div>
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for=""></label>
+            <div class="col-md-6">
+                <button id="" type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+
+</body>
+</html>

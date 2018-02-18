@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorator="layout/headerfooter">
+
+<head>
+    <title>Home</title>
+    <link href="/webjars/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+
+<body>
+<div layout:fragment="content" class="container">
+    <p style="font-size:120%;">
+        This is my first Spring Boot complete demo application. Here I have used
+        Spring Boot as backend technology, Thymeleaf and Bootstrap as frontend technology.
+        For security purpose I have used Spring Boot Security 4 and for Authentication and
+        Authorization from database I have used Spring Boot Data JPA.
+
+    </p>
+    <div>
+        <img th:src="@{/images/website.jpg}" alt="Image" class="img-responsive center-block" th:width="800px" th:height="506px"/>
+    </div>
+    <p style="font-size:120%;">
+        Creating this application has helped me to learn spring boot security based application properly.
+        Here UserDetailService and BcryptPasswordEncoder class has been used for database
+        authorization and authentication security purpose.
+    </p>
+</div>
+</body>
+</html>

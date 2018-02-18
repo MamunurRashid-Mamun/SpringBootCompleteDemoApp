@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorator="layout/headerfooter">
+<head>
+    <title>Secured Data</title>
+    <link href="/webjars/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container" layout:fragment="content">
+    <h1>Hello <span th:text="${userName}"></span>, Your Secured Data will reside here.</h1>
+</div>
+</body>
+</html>
